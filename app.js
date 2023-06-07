@@ -1,6 +1,6 @@
 // const mySetTimeout = (delay) => new Promise(resolve => setTimeout(resolve,delay))
 
-// function makeToys(numToys, makeTime, deliverTime, sellTime) {
+// function makeToys(numToys, makeTime, deliverTime, sellToy) {
 //     let madeToys = 0
 //     mySetTimeout(makeTime)
 //     .then(() => {
@@ -10,7 +10,7 @@
 //     })
 //     .then(() => {
 //         console.log(`${madeToys} has delivered`)
-//         return mySetTimeout(sellTime)
+//         return mySetTimeout(sellToy)
 //     })
 //     .then(() => {
 //         console.log(`${madeToys} has sold`)
@@ -22,7 +22,7 @@
 
 const mySetTimeout = (delay) => new Promise(resolve => setTimeout(resolve,delay))
 
-async function makeToys(numToys,makeTime,deliverTime,sellTime) {
+async function makeToys(numToys,makeTime,deliverTime,sellToy) {
     try {
         let madeToys = 0
         console.log('toys has made')
@@ -31,7 +31,7 @@ async function makeToys(numToys,makeTime,deliverTime,sellTime) {
         console.log(`${madeToys} has made`)
         await mySetTimeout(deliverTime)
         console.log(`${madeToys} has deliverd`)
-        await mySetTimeout(sellTime)
+        await mySetTimeout(sellToy)
         console.log(`${madeToys} has sold`)
     } catch (err) {
         console.log(err)
